@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## DEMO
 
-https://lkkolosowski.github.io/to-do-list-react/
+https://lkkolosowski.github.io/food-market/
 
 ## Preview
 
