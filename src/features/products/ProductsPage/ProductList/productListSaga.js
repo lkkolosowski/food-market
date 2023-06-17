@@ -1,6 +1,6 @@
 import { takeLatest, takeEvery, call, put, select } from "redux-saga/effects";
 import { getProductFromAPI } from "./getProductFromAPI";
-import { saveProductsInLocalStorage } from "./productsLocalStorage";
+import { saveProductsInLocalStorage } from "../../productsLocalStorage";
 import {
   fetchProduct,
   fetchProductSuccess,

@@ -4,7 +4,7 @@ import {
   selectIsFocused,
   selectProducts,
   setIsFocused,
-} from "../../../productListSlice";
+} from "../ProductList/productListSlice";
 import {
   Cross,
   Image,
@@ -14,14 +14,14 @@ import {
   StyledSearchList,
   Wrapper,
 } from "./styled";
-import Label from "../../../../../common/Label";
+import Label from "../../../../common/Label";
 
 const SearchList = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => selectProducts(state));
   const isFocused = useSelector(selectIsFocused);
 
-  if (isFocused)
+  if (isFocused && products.length > 0)
     return (
       <Wrapper>
         <Scroll>

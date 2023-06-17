@@ -5,7 +5,7 @@ import {
   fetchProduct,
   cleanFridge,
   selectLoading,
-} from "../../productListSlice";
+} from "../ProductList/productListSlice";
 import Input from "../Input";
 import Loader from "../../../../common/Loader";
 

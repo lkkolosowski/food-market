@@ -5,7 +5,7 @@ import Header from "../../../common/Header";
 import Container from "../../../common/Container";
 import Footer from "../../../common/Footer";
 import Search from "./Search";
-import SearchList from "./Search/SearchList";
+import SearchList from "./SearchList";
 import Backdrop from "../../../common/Backdrop";
 
 function ProductsPage() {

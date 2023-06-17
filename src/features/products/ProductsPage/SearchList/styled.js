@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as CrossIcon } from "../../../../../images/cross.svg";
+import { ReactComponent as CrossIcon } from "../../../../images/cross.svg";
 
 export const Wrapper = styled.article`
   background-color: ${({ theme }) => theme.color.white};
@@ -59,7 +59,7 @@ export const Remove = styled.button`
   position: absolute;
   right: 2px;
   top: -36px;
-  opacity: 1;
+  opacity: 0.6;
   cursor: pointer;
   padding: 0;
   border: 0;
@@ -73,7 +73,7 @@ export const Remove = styled.button`
   z-index: 90;
 
   &:hover {
-    opacity: 0.6;
+    opacity: 1;
   }
 `;
 

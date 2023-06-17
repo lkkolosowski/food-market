@@ -5,7 +5,7 @@ import {
   selectSearchValue,
   setIsFocused,
   setSearchValue,
-} from "../../productListSlice";
+} from "../ProductList/productListSlice";
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,6 @@ const Search = () => {
         onChange={onInputChange}
         maxLength={225}
         onFocus={() => dispatch(setIsFocused(true))}
-        // onBlur={() => dispatch(setIsFocused(false))}
       />
     </FormField>
   );
