@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { ReactComponent as CrossIcon } from "../../../../images/cross.svg";
+import { ReactComponent as PackagingIcon } from "../../../../images/packaging.svg";
 
 const alto = ({ theme }) => theme.color.alto;
 
@@ -104,6 +105,10 @@ export const StyledLink = styled(Link)`
 export const Fridge = styled.table`
   width: 100%;
   border-collapse: collapse;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const Product = styled.tr``;
@@ -117,7 +122,7 @@ export const HeaderCell = styled.th`
       }
     `};
 
-    ${({ noMobile }) =>
+  ${({ noMobile }) =>
     noMobile &&
     css`
       @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
@@ -135,6 +140,10 @@ export const Cell = styled.td`
     !productName &&
     css`
       width: 120px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+        width: auto;
+      }
     `}
 
   ${({ remove }) =>
@@ -147,6 +156,10 @@ export const Cell = styled.td`
     withImage &&
     css`
       padding: 0;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+        width: 20px;
+      }
     `}
 
   ${({ barcode }) =>
@@ -163,7 +176,7 @@ export const Cell = styled.td`
       }
     `};
 
-    ${({ noMobile }) =>
+  ${({ noMobile }) =>
     noMobile &&
     css`
       @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
@@ -179,12 +192,16 @@ export const CellInner = styled.div`
 `;
 
 export const Image = styled.img`
-  height: 118px;
+  width: 100%;
   aspect-ratio: 1;
   display: block;
   object-fit: contain;
   pointer-events: none;
   padding: 8px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    padding: 4px;
+  }
 `;
 
 export const Remove = styled.button`
@@ -207,4 +224,10 @@ export const Cross = styled(CrossIcon)`
   height: 16px;
   width: auto;
   margin-bottom: -3px;
+`;
+
+export const Packaging = styled(PackagingIcon)`
+  height: auto;
+  width: 100%;
+  margin: 0 auto -3px;
 `;
