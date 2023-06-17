@@ -42,7 +42,7 @@ const Form = () => {
         maxLength={225}
       />
       <Button disabled={isLoading}>
-        {isLoading ? <Loader /> : "Dodaj produkt"}
+        {isLoading ? <Loader /> : "Add product"}
       </Button>
     </FormField>
   );
