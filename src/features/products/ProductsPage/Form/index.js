@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FormField, Button } from "./styled";
 import {
-  fetchExampleProducts,
+  fetchProduct,
   cleanFridge,
   selectLoading,
 } from "../../productListSlice";
@@ -24,7 +24,7 @@ const Form = () => {
       return;
     }
 
-    dispatch(fetchExampleProducts(trimmedNewProductContent));
+    dispatch(fetchProduct(trimmedNewProductContent));
     dispatch(cleanFridge());
 
     setNewTaskContent("");

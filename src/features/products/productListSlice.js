@@ -39,11 +39,11 @@ const productListSlice = createSlice({
     setSearchValue: (state, { payload: searchValue }) => {
       state.search = searchValue;
     },
-    fetchExampleProducts: (state, { payload: productEan }) => {
+    fetchProduct: (state, { payload: productEan }) => {
       state.loading = true;
       state.product = productEan;
     },
-    fetchExampleProductsSuccess: (state, { payload: product }) => {
+    fetchProductSuccess: (state, { payload: product }) => {
       if (!state.products.some(({ code }) => code === product.code)) {
         state.products.push(product);
       } else {
@@ -56,7 +56,7 @@ const productListSlice = createSlice({
       }
       state.loading = false;
     },
-    fetchExampleProductsError: (state) => {
+    fetchProductError: (state) => {
       state.loading = false;
     },
   },
@@ -69,9 +69,9 @@ export const {
   setSearchValue,
   removeProduct,
   cleanFridge,
-  fetchExampleProducts,
-  fetchExampleProductsSuccess,
-  fetchExampleProductsError,
+  fetchProduct,
+  fetchProductSuccess,
+  fetchProductError,
 } = productListSlice.actions;
 
 const selectProductsState = (state) => state.products;

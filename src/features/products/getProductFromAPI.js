@@ -1,7 +1,7 @@
 import axios from "axios";
 import { nanoid } from "nanoid";
 
-export const getExampleProducts = async (productEan) => {
+export const getProductFromAPI = async (productEan) => {
   const response = await axios.get(
     `https://world.openfoodfacts.org/api/v2/product/${productEan}.json`
   );

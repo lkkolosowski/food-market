@@ -1,21 +1,21 @@
 import { takeLatest, takeEvery, call, put, select } from "redux-saga/effects";
-import { getExampleProducts } from "./getExampleProducts";
+import { getProductFromAPI } from "./getProductFromAPI";
 import { saveProductsInLocalStorage } from "./productsLocalStorage";
 import {
-  fetchExampleProducts,
-  fetchExampleProductsSuccess,
-  fetchExampleProductsError,
+  fetchProduct,
+  fetchProductSuccess,
+  fetchProductError,
   selectProducts,
   selectProduct,
 } from "./productListSlice";
 
-function* fetchExampleProductsHandler() {
+function* fetchProductHandler() {
   try {
     const productEan = yield select(selectProduct);
-    const exampleProducts = yield getExampleProducts(productEan);
-    yield put(fetchExampleProductsSuccess(exampleProducts));
+    const exampleProducts = yield getProductFromAPI(productEan);
+    yield put(fetchProductSuccess(exampleProducts));
   } catch (error) {
-    yield put(fetchExampleProductsError());
+    yield put(fetchProductError());
     yield call(
       alert(
         "An error occured. Please check your internet connection or try again later."
@@ -30,6 +30,6 @@ function* saveProductsInLocalStorageHandler() {
 }
 
 export function* productListSaga() {
-  yield takeLatest(fetchExampleProducts.type, fetchExampleProductsHandler);
+  yield takeLatest(fetchProduct.type, fetchProductHandler);
   yield takeEvery("*", saveProductsInLocalStorageHandler);
 }
