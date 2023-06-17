@@ -1,5 +1,5 @@
 import { takeLatest, takeEvery, call, put, select } from "redux-saga/effects";
-import { getProductFromAPI } from "./getProductFromAPI";
+import { getProduct } from "../../getDataFromAPI";
 import { saveProductsInLocalStorage } from "../../productsLocalStorage";
 import {
   fetchProduct,
@@ -12,7 +12,7 @@ import {
 function* fetchProductHandler() {
   try {
     const productEan = yield select(selectProduct);
-    const exampleProducts = yield getProductFromAPI(productEan);
+    const exampleProducts = yield getProduct(productEan);
     yield put(fetchProductSuccess(exampleProducts));
   } catch (error) {
     yield put(fetchProductError());
