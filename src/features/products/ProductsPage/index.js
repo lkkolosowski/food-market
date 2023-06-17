@@ -6,6 +6,7 @@ import Container from "../../../common/Container";
 import Footer from "../../../common/Footer";
 import Search from "./Search";
 import SearchList from "./Search/SearchList";
+import Backdrop from "../../../common/Backdrop";
 
 function ProductsPage() {
   return (
@@ -13,10 +14,18 @@ function ProductsPage() {
       <Container page products>
         <Header title="Food Market" />
         <Section body={<Form />} />
-        <Section body={<><Search /><SearchList /></>} />
-        <Section body={<ProductList />} />
+        <Section
+          body={
+            <>
+              <Backdrop />
+              <Search />
+              <SearchList />
+            </>
+          }
+        />
+        <Section mobileStretch body={<ProductList />} />
+        <Footer />
       </Container>
-      <Footer />
     </>
   );
 }
