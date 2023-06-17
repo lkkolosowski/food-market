@@ -220,6 +220,18 @@ export const Remove = styled.button`
   }
 `;
 
+export const Paragraph = styled.p`
+  max-width: 675px;
+  line-height: 1.5;
+
+  ${({ small }) =>
+    small &&
+    css`
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+    `};
+`;
+
 export const Cross = styled(CrossIcon)`
   height: 16px;
   width: auto;
@@ -229,5 +241,5 @@ export const Cross = styled(CrossIcon)`
 export const Packaging = styled(PackagingIcon)`
   height: auto;
   width: 100%;
-  margin: 0 auto -3px;
+  margin: 0 auto;
 `;
