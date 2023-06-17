@@ -4,6 +4,8 @@ export const FormField = styled.form`
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
+  position: relative;
+  z-index: 39;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-template-columns: 1fr;
