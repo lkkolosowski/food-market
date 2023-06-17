@@ -7,6 +7,11 @@ export const StyledFooter = styled.footer`
   text-align: center;
 `;
 
+export const Paragraph = styled.p`
+  margin: 0;
+  padding: 20px;
+`;
+
 export const StyledHeart = styled(Heart)`
   height: 16px;
   width: auto;
