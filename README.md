@@ -12,7 +12,7 @@ https://lkkolosowski.github.io/to-do-list-react/
 
 ## Description
 
-An application that allows you to create your own shopping list, check the nutritional value of food products, and search. This project will be expanded in the future :)
+An application fetch data from [openfoodfacts.org](https://world.openfoodfacts.org/) API that allows you to create your own shopping list, check the nutritional value of food products, and search. This project will be expanded in the future :)
 
 ## Technologies
 
@@ -27,6 +27,7 @@ An application that allows you to create your own shopping list, check the nutri
 
 ### Others
 - localStorage
+- API
 - …
 
 ## Available Scripts
