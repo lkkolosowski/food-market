@@ -33,33 +33,49 @@ export const StyledLabel = styled.span`
         `;
       case "-":
         return css`
-          background-color: #fdeeee;
+          background-color: #ef7d00;
           margin-left: 0;
           margin-right: 8px;
           font-size: 1rem;
           width: 23px;
+          aspect-ratio: 1;
           user-select: none;
+          color: ${({ theme }) => theme.color.white};
           cursor: pointer;
           &:hover {
             opacity: 0.6;
           }
+          @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+            margin-right: 4px;
+          }
         `;
       case "+":
         return css`
-          background-color: #e8f4ed;
+          background-color: #87bd25;
           margin-left: 8px;
           font-size: 1rem;
           width: 23px;
+          aspect-ratio: 1;
           user-select: none;
+          color: ${({ theme }) => theme.color.white};
           cursor: pointer;
           &:hover {
             opacity: 0.6;
+          }
+          @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+            margin-left: 4px;
           }
         `;
       case "productName":
         return css`
           margin-left: 8px;
           margin-right: 8px;
+        `;
+      case "productCode":
+        return css`
+          margin-left: 8px;
+          margin-right: 8px;
+          display: block;
         `;
       case "button":
         return css`
@@ -70,6 +86,8 @@ export const StyledLabel = styled.span`
           padding: 5px 14px;
           cursor: pointer;
           user-select: none;
+          margin-bottom: 10px;
+
           &:hover {
             opacity: 0.8;
           }
