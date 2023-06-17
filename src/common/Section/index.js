@@ -1,8 +1,8 @@
 import { Wrapper, Body } from "./styled";
 
-const Section = ({ body }) => (
+const Section = ({ body, mobileStretch }) => (
   <Wrapper>
-    <Body>{body}</Body>
+    <Body mobileStretch={mobileStretch}>{body}</Body>
   </Wrapper>
 );
 
