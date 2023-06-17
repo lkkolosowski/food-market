@@ -226,10 +226,10 @@ const ProductList = () => {
         </>
       ) : (
         <>
-          <p>Nie znaleziono produktu.</p>
+          <p>Product not found.</p>
           <p>
-            Przykładowe kody EAN: <br />
-            20858087 (twaróg) <br /> 5000159461122 (Snickers)
+          Sample EAN codes: <br />
+            20858087 (cottage cheese) <br /> 5000159461122 (chocolate bar)
           </p>
         </>
       )}
