@@ -8,42 +8,27 @@ https://lkkolosowski.github.io/to-do-list-react/
 
 ## Preview
 
-![to do list preview](preview.gif)
+![to do list preview](preview.png)
 
 ## Description
 
-Here is your to-do list that you can create in this application if you feel like it 😁 You can add individual tasks, delete them, or hide completed ones. The list is saved to local memory, so you won't miss anything!
+An application that allows you to create your own shopping list, check the nutritional value of food products, and search. This project will be expanded in the future :)
 
 ## Technologies
 
-### Basics
-- Semantic HTML
-- normalize.css
-- CSS Flex
-- CSS Grid
-- JS Objects
-- JS Array
-- Immutability
-
-### Useful Libraries
-- Babel
-- WebPack
-- styled-components
-
-### React
+### React, Redux <3
 - Create React App
 - useState, useEffect, useRef
 - Custom Hooks
 - React-Redux
-
-### Redux
 - Redux-Saga
 - Redux-Router
 - Redux-Toolkit
 
-### Advanced
+### Others
 - localStorage
-- Generator function*
+- …
+
 ## Available Scripts
 
 In the project directory, you can run:
