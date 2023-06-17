@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 
 export const Main = styled.main`
-  max-width: 1400px;
   margin: 0 auto;
   padding: 20px 10px 0;
 
@@ -18,7 +17,7 @@ export const Main = styled.main`
   ${({ page }) =>
     page &&
     css`
-      min-height: calc(100vh - 113px);
+      min-height: calc(100vh - 121px);
     `};
 
   ${({ products }) =>
