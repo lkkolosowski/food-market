@@ -4,7 +4,7 @@ import {
   increaseQuantity,
   removeProduct,
   selectProducts,
-} from "../../productListSlice";
+} from "./productListSlice";
 import {
   Fridge,
   Image,
@@ -15,6 +15,7 @@ import {
   Cross,
   HeaderCell,
   Packaging,
+  Paragraph,
 } from "./styled";
 import Label from "../../../../common/Label";
 import ProductBarcode from "./ProductBarcode";
@@ -188,12 +189,11 @@ const ProductList = () => {
         </>
       ) : (
         <>
-          <Packaging style={{ width: "50%" }} />
-          <p>Product not found.</p>
-          <p>
-            Sample EAN codes: <br />
-            20858087 (cottage cheese) <br /> 5000159461122 (chocolate bar)
-          </p>
+          <Packaging style={{ maxWidth: "300px" }} />
+          <Paragraph small>
+            Products not found. Sample EAN codes: 20858087 (cottage cheese),
+            5000159461122 (chocolate bar).
+          </Paragraph>
         </>
       )}
     </>
