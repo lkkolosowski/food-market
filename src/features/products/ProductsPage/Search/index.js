@@ -18,7 +18,6 @@ const Search = () => {
   return (
     <FormField>
       <Input
-        autoFocus
         value={searchValue}
         placeholder="Search for groceries"
         onChange={onInputChange}
