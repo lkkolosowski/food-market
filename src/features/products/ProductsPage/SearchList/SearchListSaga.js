@@ -23,5 +23,5 @@ function* fetchProductsHandler() {
 }
 
 export function* searchListSaga() {
-  yield debounce(2000, setSearchValue.type, fetchProductsHandler);
+  yield debounce(1000, setSearchValue.type, fetchProductsHandler);
 }

@@ -135,15 +135,16 @@ export const Cell = styled.td`
   border: 2px solid #eeedef;
   text-align: center;
   padding: 0 8px;
+  width: 120px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    width: auto;
+      }
 
   ${({ productName }) =>
-    !productName &&
+    productName &&
     css`
-      width: 120px;
-
-      @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-        width: auto;
-      }
+      width: auto;
     `}
 
   ${({ remove }) =>
@@ -152,10 +153,19 @@ export const Cell = styled.td`
       width: 20px;
     `}
 
+    ${({ blank }) =>
+    blank &&
+    css`
+      width: 20px;
+      border: none;
+      padding: 0;
+    `}
+
   ${({ withImage }) =>
     withImage &&
     css`
       padding: 0;
+      width: 120px;
 
       @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
         width: 20px;
@@ -165,7 +175,7 @@ export const Cell = styled.td`
   ${({ barcode }) =>
     barcode &&
     css`
-      width: 142px;
+      width: auto;
     `}
 
     ${({ noTablet }) =>

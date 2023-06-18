@@ -90,7 +90,6 @@ export const Packaging = styled(PackagingIcon)`
   margin: 0 auto;
   padding: 10px 0;
   margin-bottom: 58px;
-  width: 137px;
   height: auto;
   object-fit: contain;
 `;
