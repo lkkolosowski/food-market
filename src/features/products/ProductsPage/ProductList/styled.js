@@ -139,7 +139,7 @@ export const Cell = styled.td`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     width: auto;
-      }
+  }
 
   ${({ productName }) =>
     productName &&
@@ -233,6 +233,7 @@ export const Remove = styled.button`
 export const Paragraph = styled.p`
   max-width: 675px;
   line-height: 1.5;
+  margin: 0 auto;
 
   ${({ small }) =>
     small &&
