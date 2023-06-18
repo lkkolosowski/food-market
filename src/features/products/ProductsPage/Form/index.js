@@ -10,7 +10,7 @@ import Input from "../Input";
 import Loader from "../../../../common/Loader";
 
 const Form = () => {
-  const [newProductContent, setNewTaskContent] = useState("");
+  const [newProductContent, setNewProductContent] = useState("");
   const inputRef = useRef(null);
   const dispatch = useDispatch();
   const isLoading = useSelector(selectLoading);
@@ -27,7 +27,7 @@ const Form = () => {
     dispatch(fetchProduct(trimmedNewProductContent));
     dispatch(cleanFridge());
 
-    setNewTaskContent("");
+    setNewProductContent("");
     inputRef.current.focus();
   };
 
@@ -37,7 +37,7 @@ const Form = () => {
         autoFocus
         value={newProductContent}
         placeholder="Enter product barcode here"
-        onChange={({ target }) => setNewTaskContent(target.value)}
+        onChange={({ target }) => setNewProductContent(target.value)}
         ref={inputRef}
         maxLength={225}
       />

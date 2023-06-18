@@ -9,21 +9,21 @@ const productListSlice = createSlice({
     isFocused: false,
   },
   reducers: {
-    removeProduct: ({ products }, { payload: taskId }) => {
-      const index = products.findIndex(({ id }) => id === taskId);
+    removeProduct: ({ products }, { payload: productId }) => {
+      const index = products.findIndex(({ id }) => id === productId);
       products.splice(index, 1);
     },
-    decreaseQuantity: (state, { payload: taskId }) => {
+    decreaseQuantity: (state, { payload: productId }) => {
       state.products = state.products.map((obj) => {
-        if (obj.id === taskId) {
+        if (obj.id === productId) {
           return { ...obj, quantity: obj.quantity - 1 };
         }
         return obj;
       });
     },
-    increaseQuantity: (state, { payload: taskId }) => {
+    increaseQuantity: (state, { payload: productId }) => {
       state.products = state.products.map((obj) => {
-        if (obj.id === taskId) {
+        if (obj.id === productId) {
           return { ...obj, quantity: obj.quantity + 1 };
         }
         return obj;
@@ -76,8 +76,5 @@ export const selectIsFocused = (state) => selectProductsState(state).isFocused;
 
 export const selectProducts = (state) => selectProductsState(state).products;
 export const selectLoading = (state) => selectProductsState(state).loading;
-
-export const getTaskById = (state, taskId) =>
-  selectProducts(state).find(({ id }) => id === taskId);
 
 export default productListSlice.reducer;
