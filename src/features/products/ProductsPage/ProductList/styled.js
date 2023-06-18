@@ -137,7 +137,7 @@ export const Cell = styled.td`
   padding: 0 8px;
   width: 120px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: auto;
   }
 
@@ -175,7 +175,7 @@ export const Cell = styled.td`
   ${({ barcode }) =>
     barcode &&
     css`
-      width: auto;
+      width: 120px;
     `}
 
     ${({ noTablet }) =>
