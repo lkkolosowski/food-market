@@ -1,4 +1,4 @@
-import { takeLatest, takeEvery, call, put, select } from "redux-saga/effects";
+import { takeEvery, call, put, select } from "redux-saga/effects";
 import { getProduct } from "../../getDataFromAPI";
 import { saveProductsInLocalStorage } from "../../productsLocalStorage";
 import {
@@ -30,6 +30,6 @@ function* saveProductsInLocalStorageHandler() {
 }
 
 export function* productListSaga() {
-  yield takeLatest(fetchProduct.type, fetchProductHandler);
+  yield takeEvery(fetchProduct.type, fetchProductHandler);
   yield takeEvery("*", saveProductsInLocalStorageHandler);
 }
