@@ -35,8 +35,6 @@ const SearchList = () => {
     dispatch(setSearchValue(searchValue));
   }, [searchValue, dispatch]);
 
-  console.log(productsBySearch);
-
   if (isFocused)
     return (
       <Wrapper>
