@@ -15,7 +15,7 @@ export const Wrapper = styled.article`
 
 export const Scroll = styled.div`
   overflow-y: scroll;
-  height: 375px;
+  height: 568px;
 `;
 
 export const StyledSearchList = styled.ul`

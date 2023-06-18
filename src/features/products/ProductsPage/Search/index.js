@@ -22,7 +22,7 @@ const Search = () => {
     <FormField>
       <Input
         value={searchQueryContent}
-        placeholder="Search for groceries by keywords"
+        placeholder="Search by keywords"
         onChange={onInputChange}
         maxLength={26}
         onFocus={() => dispatch(setIsFocused(true))}

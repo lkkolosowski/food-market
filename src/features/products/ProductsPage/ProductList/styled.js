@@ -252,5 +252,5 @@ export const Cross = styled(CrossIcon)`
 export const Packaging = styled(PackagingIcon)`
   height: auto;
   width: 100%;
-  margin: 0 auto;
+  margin: -40px auto 0;
 `;
