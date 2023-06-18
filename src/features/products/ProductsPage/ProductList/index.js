@@ -16,6 +16,7 @@ import {
   HeaderCell,
   Packaging,
   Paragraph,
+  StyledLink,
 } from "./styled";
 import Label from "../../../../common/Label";
 import ProductBarcode from "./ProductBarcode";
@@ -63,7 +64,13 @@ const ProductList = () => {
                         )}
                       </Cell>
                       <Cell productName>
-                        {product.product.product_name ?? "---"}
+                        <StyledLink
+                          href={`https://world.openfoodfacts.org/product/${product.code}/`}
+                          target="_blank"
+                        >
+                          {" "}
+                          {product.product.product_name ?? "---"}
+                        </StyledLink>
                       </Cell>
                       <Cell noMobile barcode>
                         <ProductBarcode value={product.code} />
@@ -191,8 +198,8 @@ const ProductList = () => {
         <>
           <Packaging style={{ maxWidth: "300px" }} />
           <Paragraph small>
-            Products not found. Sample EAN codes: 20858087 (cottage cheese),
-            5000159461122 (chocolate bar).
+            The product list is empty. Add products by entering the barcode or
+            search by keywords.
           </Paragraph>
         </>
       )}

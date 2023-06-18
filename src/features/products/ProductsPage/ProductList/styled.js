@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { ReactComponent as CrossIcon } from "../../../../images/cross.svg";
 import { ReactComponent as PackagingIcon } from "../../../../images/packaging.svg";
@@ -87,7 +86,7 @@ export const Content = styled.span`
     `};
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled.a`
   color: ${({ theme }) => theme.color.royalBlue};
   text-decoration: none;
   transition-duration: 0.2s;
@@ -95,6 +94,7 @@ export const StyledLink = styled(Link)`
 
   &:hover {
     filter: brightness(110%);
+    text-decoration: underline;
   }
 
   &:active {
