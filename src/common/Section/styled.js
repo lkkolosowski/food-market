@@ -28,9 +28,6 @@ export const Body = styled.div`
     variant === "productList" &&
     css`
       min-height: 559px;
-      justify-content: center;
-      align-content: center;
-      flex-wrap: wrap;
     `}
 `;
 
