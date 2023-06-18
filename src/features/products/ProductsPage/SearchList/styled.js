@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as CrossIcon } from "../../../../images/cross.svg";
+import { ReactComponent as PackagingIcon } from "../../../../images/packaging.svg";
 
 export const Wrapper = styled.article`
   background-color: ${({ theme }) => theme.color.white};
@@ -14,7 +15,7 @@ export const Wrapper = styled.article`
 
 export const Scroll = styled.div`
   overflow-y: scroll;
-  max-height: 375px;
+  height: 375px;
 `;
 
 export const StyledSearchList = styled.ul`
@@ -81,4 +82,15 @@ export const Cross = styled(CrossIcon)`
   height: 16px;
   width: auto;
   margin-bottom: -3px;
+`;
+
+export const Packaging = styled(PackagingIcon)`
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
+  margin-bottom: 58px;
+  width: 137px;
+  height: auto;
+  object-fit: contain;
 `;

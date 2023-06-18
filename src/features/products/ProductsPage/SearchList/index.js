@@ -1,54 +1,74 @@
 import { useDispatch, useSelector } from "react-redux";
-import {
-  increaseQuantity,
-  selectIsFocused,
-  selectProducts,
-  setIsFocused,
-} from "../ProductList/productListSlice";
+import { fetchProduct, selectIsFocused, setIsFocused } from "../ProductList/productListSlice";
 import {
   Cross,
   Image,
   Item,
+  Packaging,
   Remove,
   Scroll,
   StyledSearchList,
   Wrapper,
 } from "./styled";
 import Label from "../../../../common/Label";
+import {
+  selectLoading,
+  selectProducts,
+  selectSearchValue,
+  setSearchValue,
+} from "./searchListSlice";
+import { useEffect } from "react";
 
 const SearchList = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => selectProducts(state));
+
+  const searchValue = useSelector(selectSearchValue);
+  const productsBySearch = useSelector(selectProducts);
+  const isLoading = useSelector(selectLoading);
   const isFocused = useSelector(selectIsFocused);
 
-  if (isFocused && products.length > 0)
+  useEffect(() => {
+    dispatch(setSearchValue(searchValue));
+  }, [searchValue, dispatch]);
+
+  if (isFocused)
     return (
       <Wrapper>
         <Scroll>
           <StyledSearchList>
-            {products.map(
-              (product) =>
-                product.status === 1 && (
-                  <Item key={product.id}>
-                    <div>
-                      <Image
-                        src={product.product.image_front_url}
-                        alt={product.product.product_name}
-                      />
-                      <Label
-                        variant="productName"
-                        content={<>{product.product.product_name ?? "---"}</>}
-                      />
-                    </div>
-                    <Label
-                      variant="button"
-                      as="a"
-                      disabled={product.quantity >= 10}
-                      onClick={() => dispatch(increaseQuantity(product.id))}
-                      content="Add to list +"
-                    />
-                  </Item>
-                )
+            {isLoading ? (
+              <>
+                {Array.from({ length: 24 }, (_, index) => (
+                  <Packaging key={index} />
+                ))}
+              </>
+            ) : (
+              <>
+                {productsBySearch.map(
+                  (product) =>
+                    product.image_front_small_url && (
+                      <Item key={product.id}>
+                        <div>
+                          <Image
+                            src={product.image_front_small_url}
+                            alt={product.product_name}
+                          />
+                          <Label
+                            variant="productName"
+                            content={<>{product.product_name ?? "---"}</>}
+                          />
+                        </div>
+                        <Label
+                          variant="button"
+                          as="a"
+                          disabled={product.quantity >= 10}
+                          onClick={() => dispatch(fetchProduct(product.id))}
+                          content="Add to list +"
+                        />
+                      </Item>
+                    )
+                )}
+              </>
             )}
           </StyledSearchList>
         </Scroll>

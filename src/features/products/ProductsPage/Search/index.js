@@ -1,24 +1,27 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { FormField } from "./styled";
 import Input from "../Input";
 import {
-  selectSearchValue,
   setIsFocused,
-  setSearchValue,
 } from "../ProductList/productListSlice";
+import { setSearchValue } from "../SearchList/searchListSlice";
+import { useState } from "react";
 
 const Search = () => {
+  const [searchQueryContent, setSearchQueryContent] = useState("");
   const dispatch = useDispatch();
-  const searchValue = useSelector(selectSearchValue);
 
   const onInputChange = ({ target }) => {
-    dispatch(setSearchValue(target.value));
+    const trimmedSearchQueryContent = target.value.trim();
+
+    setSearchQueryContent(trimmedSearchQueryContent);
+    dispatch(setSearchValue(trimmedSearchQueryContent));
   };
 
   return (
     <FormField>
       <Input
-        value={searchValue}
+        value={searchQueryContent}
         placeholder="Search for groceries"
         onChange={onInputChange}
         maxLength={225}

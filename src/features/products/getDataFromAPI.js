@@ -21,3 +21,11 @@ export const getProduct = async (productEan) => {
 
   new Error(response.statusText);
 };
+
+export const searchProducts = async (query) => {
+  const response = await axios.get(
+    `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${query}&search_simple=1&action=process&json=1`
+  );
+
+  return await response.data;
+};
