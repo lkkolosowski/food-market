@@ -37,7 +37,7 @@ export const StyledLabel = styled.span`
           margin-left: 0;
           margin-right: 8px;
           font-size: 1rem;
-          width: 23px;
+          height: 23px;
           aspect-ratio: 1;
           user-select: none;
           color: ${({ theme }) => theme.color.white};
@@ -47,6 +47,9 @@ export const StyledLabel = styled.span`
           }
           @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
             margin-right: 4px;
+            aspect-ratio: unset;
+            padding: 2px;
+            width: 14px;
           }
         `;
       case "+":
@@ -54,7 +57,7 @@ export const StyledLabel = styled.span`
           background-color: #87bd25;
           margin-left: 8px;
           font-size: 1rem;
-          width: 23px;
+          height: 23px;
           aspect-ratio: 1;
           user-select: none;
           color: ${({ theme }) => theme.color.white};
@@ -64,6 +67,9 @@ export const StyledLabel = styled.span`
           }
           @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
             margin-left: 4px;
+            aspect-ratio: unset;
+            padding: 2px;
+            width: 14px;
           }
         `;
       case "productName":
