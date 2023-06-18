@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.section`
   background-color: #fff;
@@ -23,6 +23,15 @@ export const Body = styled.div`
   flex-direction: column;
   padding: 20px;
   min-height: 56px;
+
+  ${({ variant }) =>
+    variant === "productList" &&
+    css`
+      min-height: 559px;
+      justify-content: center;
+      align-content: center;
+      flex-wrap: wrap;
+    `}
 `;
 
 export const Title = styled.h2`

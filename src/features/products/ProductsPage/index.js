@@ -23,7 +23,7 @@ function ProductsPage() {
             </>
           }
         />
-        <Section body={<ProductList />} />
+        <Section variant="productList" body={<ProductList />} />
         <Footer />
       </Container>
     </>

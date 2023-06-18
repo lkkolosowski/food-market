@@ -1,8 +1,8 @@
 import { Wrapper, Body } from "./styled";
 
-const Section = ({ body }) => (
+const Section = ({ variant, body }) => (
   <Wrapper>
-    <Body>{body}</Body>
+    <Body variant={variant} >{body}</Body>
   </Wrapper>
 );
 
