@@ -23,7 +23,7 @@ function ProductsPage() {
             </>
           }
         />
-        <Section mobileStretch body={<ProductList />} />
+        <Section body={<ProductList />} />
         <Footer />
       </Container>
     </>
