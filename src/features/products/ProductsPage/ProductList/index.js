@@ -40,7 +40,7 @@ const ProductList = () => {
                 <HeaderCell noTablet>Fat</HeaderCell>
                 <HeaderCell noTablet>Carbs</HeaderCell>
                 <HeaderCell noTablet>Proteins</HeaderCell>
-                <HeaderCell noTablet></HeaderCell>
+                <HeaderCell></HeaderCell>
               </tr>
             </thead>
             <tbody>
