@@ -48,36 +48,43 @@ const SearchList = () => {
           ) : productsBySearch.length === 0 ? (
             <>
               <Packaging
-                style={{ maxWidth: "300px", marginBottom: 0, padding: 0 }}
+                style={{
+                  height: "auto",
+                  maxWidth: "300px",
+                  marginBottom: 0,
+                  padding: 0,
+                  marginTop: "50px",
+                }}
               />
               <Label variant="productCode" content="Products not found" />
             </>
           ) : (
             <StyledSearchList>
-              {productsBySearch.map(
-                (product) =>
-                  product.image_front_small_url && (
-                    <Item key={product.id}>
-                      <div>
-                        <Image
-                          src={product.image_front_small_url}
-                          alt={product.product_name}
-                        />
-                        <Label
-                          variant="productName"
-                          content={<>{product.product_name ?? "---"}</>}
-                        />
-                      </div>
-                      <Label
-                        variant="button"
-                        as="a"
-                        disabled={product.quantity >= 10}
-                        onClick={() => dispatch(fetchProduct(product.id))}
-                        content="Add to list +"
+              {productsBySearch.map((product) => (
+                <Item key={product.id}>
+                  <div>
+                    {product.image_front_small_url ? (
+                      <Image
+                        src={product.image_front_small_url}
+                        alt={product.product_name ?? "image"}
                       />
-                    </Item>
-                  )
-              )}
+                    ) : (
+                      <Packaging />
+                    )}
+                    <Label
+                      variant="productName"
+                      content={<>{product.product_name ?? "---"}</>}
+                    />
+                  </div>
+                  <Label
+                    variant="button"
+                    as="a"
+                    disabled={product.quantity >= 10}
+                    onClick={() => dispatch(fetchProduct(product.id))}
+                    content="Add to list +"
+                  />
+                </Item>
+              ))}
             </StyledSearchList>
           )}
         </Scroll>

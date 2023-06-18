@@ -14,7 +14,7 @@ export const Wrapper = styled.article`
 `;
 
 export const Scroll = styled.div`
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 568px;
 `;
 
@@ -56,6 +56,16 @@ export const Image = styled.img`
   margin: 0 auto;
 `;
 
+export const Packaging = styled(PackagingIcon)`
+  height: 120px;
+  aspect-ratio: 1;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+  padding: 8px;
+  margin: 0 auto;
+`;
+
 export const Remove = styled.button`
   position: absolute;
   right: 2px;
@@ -82,14 +92,4 @@ export const Cross = styled(CrossIcon)`
   height: 16px;
   width: auto;
   margin-bottom: -3px;
-`;
-
-export const Packaging = styled(PackagingIcon)`
-  height: auto;
-  width: 100%;
-  margin: 0 auto;
-  padding: 10px 0;
-  margin-bottom: 58px;
-  height: auto;
-  object-fit: contain;
 `;
