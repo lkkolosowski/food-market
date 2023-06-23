@@ -1,14 +1,17 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { FormField } from "./styled";
 import Input from "../Input";
+import { setIsFocused } from "../ProductList/productListSlice";
 import {
-  setIsFocused,
-} from "../ProductList/productListSlice";
-import { setSearchValue } from "../SearchList/searchListSlice";
+  setSearchValue,
+  selectSearchValue,
+} from "../SearchList/searchListSlice";
 import { useState } from "react";
 
 const Search = () => {
-  const [searchQueryContent, setSearchQueryContent] = useState("");
+  const searchValue = useSelector(selectSearchValue);
+  const [searchQueryContent, setSearchQueryContent] = useState(searchValue);
+
   const dispatch = useDispatch();
 
   const onInputChange = ({ target }) => {
