@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchProduct,
@@ -21,7 +22,6 @@ import {
   selectSearchValue,
   setSearchValue,
 } from "./searchListSlice";
-import { useEffect } from "react";
 
 const SearchList = () => {
   const dispatch = useDispatch();
