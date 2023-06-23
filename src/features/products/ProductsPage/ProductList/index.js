@@ -55,8 +55,9 @@ const ProductList = () => {
                           <div>
                             {product.product.image_front_url ? (
                               <Image
-                                src={product.product.image_front_url}
-                                alt={product.product.product_name}
+                                src={product.product.image_front_small_url}
+                                alt={product.product.product_name ?? "product image"}
+                                effect="blur"
                               />
                             ) : (
                               <Packaging />

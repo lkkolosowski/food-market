@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { ReactComponent as CrossIcon } from "../../../../images/cross.svg";
 import { ReactComponent as PackagingIcon } from "../../../../images/packaging.svg";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const alto = ({ theme }) => theme.color.alto;
 
@@ -135,7 +137,7 @@ export const Cell = styled.td`
   border: 2px solid #eeedef;
   text-align: center;
   padding: 0 8px;
-  width: 120px;
+  width: 100px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: auto;
@@ -165,17 +167,19 @@ export const Cell = styled.td`
     withImage &&
     css`
       padding: 0;
-      width: 120px;
+      width: 100px;
+      height: 100px;
 
       @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
         width: 20px;
+        height: 20px;
       }
     `}
 
   ${({ barcode }) =>
     barcode &&
     css`
-      width: 120px;
+      width: 100px;
     `}
 
     ${({ noTablet }) =>
@@ -206,7 +210,7 @@ export const CellInner = styled.div`
   align-items: center;
 `;
 
-export const Image = styled.img`
+export const Image = styled(LazyLoadImage)`
   width: 100%;
   aspect-ratio: 1;
   display: block;

@@ -66,7 +66,8 @@ const SearchList = () => {
                     {product.image_front_small_url ? (
                       <Image
                         src={product.image_front_small_url}
-                        alt={product.product_name ?? "image"}
+                        alt={product.product_name ?? "product image"}
+                        effect="blur"
                       />
                     ) : (
                       <Packaging />

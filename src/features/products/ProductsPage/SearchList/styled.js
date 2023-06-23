@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { ReactComponent as CrossIcon } from "../../../../images/cross.svg";
 import { ReactComponent as PackagingIcon } from "../../../../images/packaging.svg";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 export const Wrapper = styled.article`
   background-color: ${({ theme }) => theme.color.white};
@@ -46,7 +48,7 @@ export const Item = styled.li`
   }
 `;
 
-export const Image = styled.img`
+export const Image = styled(LazyLoadImage)`
   height: 120px;
   aspect-ratio: 1;
   display: block;
