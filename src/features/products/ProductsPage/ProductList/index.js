@@ -17,6 +17,7 @@ import {
   Packaging,
   Paragraph,
   StyledLink,
+  Quantity,
 } from "./styled";
 import Label from "../../../../common/Label";
 import ProductBarcode from "./ProductBarcode";
@@ -87,7 +88,7 @@ const ProductList = () => {
                               dispatch(decreaseQuantity(product.id))
                             }
                           />
-                          <span>{product.quantity}</span>
+                          <Quantity>{product.quantity}</Quantity>
                           <Label
                             as="button"
                             variant="+"

@@ -195,6 +195,11 @@ export const Cell = styled.td`
     `};
 `;
 
+export const Quantity = styled.span`
+  font-size: 1.1rem;
+  font-family: monospace;
+`;
+
 export const CellInner = styled.div`
   display: flex;
   justify-content: center;
