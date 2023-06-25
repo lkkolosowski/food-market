@@ -60,32 +60,30 @@ const SearchList = () => {
             </>
           ) : (
             <StyledSearchList>
-              {productsBySearch.map((product) => (
-                <Item key={product.id}>
-                  <div>
-                    {product.image_front_small_url ? (
+              {productsBySearch
+                .filter((item) => item.image_front_small_url)
+                .map((product) => (
+                  <Item key={product.id}>
+                    <div>
                       <Image
                         src={product.image_front_small_url}
                         alt={product.product_name ?? "product image"}
                         effect="blur"
                       />
-                    ) : (
-                      <Packaging />
-                    )}
+                      <Label
+                        variant="productName"
+                        content={<>{product.product_name ?? "---"}</>}
+                      />
+                    </div>
                     <Label
-                      variant="productName"
-                      content={<>{product.product_name ?? "---"}</>}
+                      variant="button"
+                      as="a"
+                      disabled={product.quantity >= 10}
+                      onClick={() => dispatch(fetchProduct(product.id))}
+                      content="Add to list +"
                     />
-                  </div>
-                  <Label
-                    variant="button"
-                    as="a"
-                    disabled={product.quantity >= 10}
-                    onClick={() => dispatch(fetchProduct(product.id))}
-                    content="Add to list +"
-                  />
-                </Item>
-              ))}
+                  </Item>
+                ))}
             </StyledSearchList>
           )}
         </Scroll>
