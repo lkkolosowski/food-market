@@ -46,7 +46,6 @@ const SearchList = () => {
                   <div>
                     <Packaging />
                     <Label variant="skeletonProductName" content="" />
-                    <Label variant="skeletonProductName" content="" />
                   </div>
                   <Label variant="skeletonButton" as="span" content="" />
                 </Item>

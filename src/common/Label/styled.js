@@ -82,11 +82,11 @@ export const StyledLabel = styled.span`
         return css`
           background-color: #eeedef;
           display: block;
-          height: 8px;
-          margin: 5px auto;
+          height: 22px;
+          margin: 5px auto 4px;
           border-radius: unset;
           background: linear-gradient(
-            120deg,
+            90deg,
             #eeedef 30%,
             #fdfdfd 38%,
             #fdfdfd 40%,
@@ -128,7 +128,7 @@ export const StyledLabel = styled.span`
           width: 60%;
           height: 22px;
           background: linear-gradient(
-            120deg,
+            90deg,
             #eeedef 30%,
             #fdfdfd 38%,
             #fdfdfd 40%,
