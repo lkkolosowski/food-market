@@ -74,6 +74,7 @@ export const StyledLabel = styled.span`
         `;
       case "productName":
         return css`
+          display: block;
           margin-left: 8px;
           margin-right: 8px;
         `;
