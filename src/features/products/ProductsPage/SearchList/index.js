@@ -42,7 +42,14 @@ const SearchList = () => {
           {isLoading ? (
             <StyledSearchList>
               {Array.from({ length: 24 }, (_, index) => (
-                <Packaging key={index} />
+                <Item key={index}>
+                  <div>
+                    <Packaging />
+                    <Label variant="skeletonProductName" content="" />
+                    <Label variant="skeletonProductName" content="" />
+                  </div>
+                  <Label variant="skeletonButton" as="span" content="" />
+                </Item>
               ))}
             </StyledSearchList>
           ) : productsBySearch.length === 0 ? (
@@ -72,7 +79,7 @@ const SearchList = () => {
                       />
                       <Label
                         variant="productName"
-                        content={<>{product.product_name ?? "---"}</>}
+                        content={product.product_name ?? "---"}
                       />
                     </div>
                     <Label

@@ -78,6 +78,25 @@ export const StyledLabel = styled.span`
           margin-left: 8px;
           margin-right: 8px;
         `;
+      case "skeletonProductName":
+        return css`
+          background-color: #eeedef;
+          display: block;
+          height: 8px;
+          margin: 5px auto;
+          border-radius: unset;
+          background: linear-gradient(
+            120deg,
+            #eeedef 30%,
+            #fdfdfd 38%,
+            #fdfdfd 40%,
+            #eeedef 48%
+          );
+          background-size: 200% 100%;
+          background-position: 100% 0;
+
+          animation: skeleton-loading 1s linear infinite;
+        `;
       case "productCode":
         return css`
           margin-left: 8px;
@@ -99,6 +118,27 @@ export const StyledLabel = styled.span`
             opacity: 0.8;
           }
         `;
+      case "skeletonButton":
+        return css`
+          background-color: #eeedef;
+          margin-left: 8px;
+          margin-right: 8px;
+          padding: 5px 14px;
+          margin-bottom: 10px;
+          width: 60%;
+          height: 22px;
+          background: linear-gradient(
+            120deg,
+            #eeedef 30%,
+            #fdfdfd 38%,
+            #fdfdfd 40%,
+            #eeedef 48%
+          );
+          background-size: 200% 100%;
+          background-position: 100% 0;
+
+          animation: skeleton-loading 1s linear infinite;
+        `;
       default:
         return css`
           background-color: transparent;
@@ -106,4 +146,9 @@ export const StyledLabel = styled.span`
         `;
     }
   }};
+  @keyframes skeleton-loading {
+    100% {
+      background-position: -100% 0;
+    }
+  }
 `;
