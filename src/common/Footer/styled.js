@@ -9,7 +9,7 @@ export const StyledFooter = styled.footer`
 
 export const Paragraph = styled.p`
   margin: 0;
-  padding: 20px;
+  padding: 10px 20px;
 `;
 
 export const StyledHeart = styled(Heart)`
