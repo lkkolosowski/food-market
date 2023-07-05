@@ -7,7 +7,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 const alto = ({ theme }) => theme.color.alto;
 
 export const StyledProductList = styled.div`
-  min-height: 458px;
+  min-height: 418px;
 `;
 
 export const List = styled.ul`
