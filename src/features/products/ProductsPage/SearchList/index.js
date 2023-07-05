@@ -78,7 +78,12 @@ const SearchList = () => {
                       />
                       <Label
                         variant="productName"
-                        content={product.product_name ?? product.id}
+                        content={
+                          <>
+                            {product["quantity"] ?? ""}{" "}
+                            {product.product_name ?? product.id}
+                          </>
+                        }
                       />
                     </div>
                     <Label
