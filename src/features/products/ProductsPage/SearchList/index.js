@@ -78,9 +78,7 @@ const SearchList = () => {
                       />
                       <Label
                         variant="productName"
-                        content={
-                          product.product_name ?? product.brands.split(",")[0]
-                        }
+                        content={product.product_name ?? product.id}
                       />
                     </div>
                     <Label
