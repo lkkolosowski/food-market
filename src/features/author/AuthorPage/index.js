@@ -19,14 +19,13 @@ function AuthorPage() {
               </ImageWrapper>
               <Paragraph>Hi! 👋🏼 My name is Łukasz, I'm from Wrocław.</Paragraph>
               <Paragraph>
-                I ride a bike a lot 🚴.
-                <br />
                 I like to admire the views (mountains 🌄, forests 🛤️, sea 🌅).
-                <br />
-                I am interested in programming 💻, cooking 🍳🍴,
-                <br />
+              </Paragraph>
+              <Paragraph>
                 and I also like to go to the gym sometimes 💪 :)
               </Paragraph>
+              <Paragraph>I am interested in programming 💻,</Paragraph>
+              <Paragraph>I ride a bike a lot 🚴.</Paragraph>
             </>
           }
         />
