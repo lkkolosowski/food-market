@@ -18,6 +18,8 @@ import {
   Paragraph,
   StyledLink,
   Quantity,
+  EmptyProductList,
+  StyledProductList,
 } from "./styled";
 import Label from "../../../../common/Label";
 import ProductBarcode from "./ProductBarcode";
@@ -28,7 +30,7 @@ const ProductList = () => {
   const dispatch = useDispatch();
 
   return (
-    <>
+    <StyledProductList>
       {products.length > 0 ? (
         <>
           <Fridge>
@@ -56,7 +58,10 @@ const ProductList = () => {
                             {product.product.image_front_url ? (
                               <Image
                                 src={product.product.image_front_small_url}
-                                alt={product.product.product_name ?? "product image"}
+                                alt={
+                                  product.product.product_name ??
+                                  "product image"
+                                }
                                 effect="blur"
                               />
                             ) : (
@@ -71,7 +76,8 @@ const ProductList = () => {
                           target="_blank"
                         >
                           {" "}
-                          {product.product.product_name ?? product.product.brands.split(",")[0]}
+                          {product.product.product_name ??
+                            product.product.brands.split(",")[0]}
                         </StyledLink>
                       </Cell>
                       <Cell noMobile barcode>
@@ -197,15 +203,19 @@ const ProductList = () => {
           </Fridge>
         </>
       ) : (
-        <>
-          <Packaging style={{ maxWidth: "300px" }} />
+        <EmptyProductList>
+          <Packaging
+            style={{
+              maxWidth: "300px",
+            }}
+          />
           <Paragraph small>
             The product list is empty. Add products by entering the barcode or
             search by keywords.
           </Paragraph>
-        </>
+        </EmptyProductList>
       )}
-    </>
+    </StyledProductList>
   );
 };
 

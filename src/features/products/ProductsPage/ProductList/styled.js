@@ -2,9 +2,13 @@ import styled, { css } from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { ReactComponent as CrossIcon } from "../../../../images/cross.svg";
 import { ReactComponent as PackagingIcon } from "../../../../images/packaging.svg";
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const alto = ({ theme }) => theme.color.alto;
+
+export const StyledProductList = styled.div`
+  min-height: 458px;
+`;
 
 export const List = styled.ul`
   list-style-type: none;
@@ -262,4 +266,9 @@ export const Packaging = styled(PackagingIcon)`
   height: auto;
   width: 100%;
   margin: 0 auto;
+`;
+
+export const EmptyProductList = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

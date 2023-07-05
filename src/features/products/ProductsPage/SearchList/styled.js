@@ -10,7 +10,6 @@ export const Wrapper = styled.article`
   z-index: 40;
   margin: 0 auto;
   box-shadow: 0 2px 6px rgba(186, 199, 213, 0.5);
-  margin-top: 38px;
   text-align: center;
   width: calc(100% - 60px);
 
@@ -23,7 +22,7 @@ export const Wrapper = styled.article`
 
 export const Scroll = styled.div`
   overflow-y: auto;
-  height: 568px;
+  height: 467px;
 `;
 
 export const StyledSearchList = styled.ul`
@@ -49,6 +48,7 @@ export const Item = styled.li`
   align-content: space-between;
   padding: 10px 0;
   grid-gap: 10px;
+  border-radius: 12px;
 
   ${({ skeletonLoading }) =>
     skeletonLoading &&
@@ -77,7 +77,7 @@ export const Item = styled.li`
     !skeletonLoading &&
     css`
       &:hover {
-        box-shadow: 0 2px 6px rgba(186, 199, 213, 0.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
     `}
 
