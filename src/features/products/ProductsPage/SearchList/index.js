@@ -1,10 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchProduct,
-  selectIsFocused,
-  setIsFocused,
-} from "../ProductList/productListSlice";
+import { fetchProduct } from "../ProductList/productListSlice";
 import {
   Cross,
   Image,
@@ -21,6 +17,8 @@ import {
   selectProducts,
   selectSearchValue,
   setSearchValue,
+  setIsFocused,
+  selectIsFocused,
 } from "./searchListSlice";
 
 const SearchList = () => {
@@ -32,14 +30,16 @@ const SearchList = () => {
   const isFocused = useSelector(selectIsFocused);
 
   useEffect(() => {
-    dispatch(setSearchValue(searchValue));
+    if (searchValue !== "") {
+      dispatch(setSearchValue(searchValue));
+    }
   }, [searchValue, dispatch]);
 
   if (isFocused)
     return (
-      <Wrapper>
+      <Wrapper hidden={isLoading === "initial" || productsBySearch === []}>
         <Scroll>
-          {isLoading ? (
+          {isLoading === true ? (
             <StyledSearchList>
               {Array.from({ length: 24 }, (_, index) => (
                 <Item skeletonLoading={isLoading} key={index}>
@@ -78,7 +78,9 @@ const SearchList = () => {
                       />
                       <Label
                         variant="productName"
-                        content={product.product_name ?? "---"}
+                        content={
+                          product.product_name ?? product.brands.split(",")[0]
+                        }
                       />
                     </div>
                     <Label

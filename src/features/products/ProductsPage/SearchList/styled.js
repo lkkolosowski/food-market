@@ -13,6 +13,12 @@ export const Wrapper = styled.article`
   margin-top: 38px;
   text-align: center;
   width: calc(100% - 60px);
+
+  ${({ hidden }) =>
+    hidden &&
+    css`
+      display: none;
+    `}
 `;
 
 export const Scroll = styled.div`

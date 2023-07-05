@@ -71,7 +71,7 @@ const ProductList = () => {
                           target="_blank"
                         >
                           {" "}
-                          {product.product.product_name ?? "---"}
+                          {product.product.product_name ?? product.product.brands.split(",")[0]}
                         </StyledLink>
                       </Cell>
                       <Cell noMobile barcode>
