@@ -1,6 +1,6 @@
 import { toAuthor, toProducts } from "../../routes";
 import Container from "../Container";
-import image from "../../images/image.jpg";
+import image from "../../images/logo128.png";
 import { NavLink } from "react-router-dom";
 import { List, Item, Wrapper, Image, Nav, StyledNavLink } from "./styled";
 
@@ -10,7 +10,7 @@ const Navigation = () => {
       <Container trimmed>
         <Wrapper>
           <NavLink to={toAuthor()}>
-            <Image src={image} alt="Łukasz" />
+            <Image src={image} alt="Food Market" />
           </NavLink>
           <List>
             <Item>

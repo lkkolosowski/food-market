@@ -21,7 +21,6 @@ export const Item = styled.li`
 
 export const Image = styled.img`
   display: block;
-  border-radius: 50%;
   width: 44px;
   padding: 10px 0;
 
