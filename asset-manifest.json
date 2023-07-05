@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/food-market/static/css/main.0e470a02.css",
-    "main.js": "/food-market/static/js/main.2f0df8b7.js",
+    "main.js": "/food-market/static/js/main.74a0ddb6.js",
     "static/js/787.63fe1a61.chunk.js": "/food-market/static/js/787.63fe1a61.chunk.js",
     "static/media/background.jpg": "/food-market/static/media/background.9a516d671c6247e65441.jpg",
     "static/media/image.jpg": "/food-market/static/media/image.4903fe30b8f8b41152b5.jpg",
@@ -10,11 +10,11 @@
     "static/media/packaging.svg": "/food-market/static/media/packaging.975b0cf72e7be8c03e3bbb33bd4f3175.svg",
     "static/media/heart.svg": "/food-market/static/media/heart.bc42c7aac7f85afadfdb98671a4a182c.svg",
     "main.0e470a02.css.map": "/food-market/static/css/main.0e470a02.css.map",
-    "main.2f0df8b7.js.map": "/food-market/static/js/main.2f0df8b7.js.map",
+    "main.74a0ddb6.js.map": "/food-market/static/js/main.74a0ddb6.js.map",
     "787.63fe1a61.chunk.js.map": "/food-market/static/js/787.63fe1a61.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0e470a02.css",
-    "static/js/main.2f0df8b7.js"
+    "static/js/main.74a0ddb6.js"
   ]
 }
