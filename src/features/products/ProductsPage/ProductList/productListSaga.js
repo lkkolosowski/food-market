@@ -16,11 +16,7 @@ function* fetchProductHandler() {
     yield put(fetchProductSuccess(exampleProducts));
   } catch (error) {
     yield put(fetchProductError());
-    yield call(
-      alert(
-        "An error occured. Please check your internet connection or try again later."
-      )
-    );
+    alert("No product found.");
   }
 }
 
