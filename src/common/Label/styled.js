@@ -84,18 +84,6 @@ export const StyledLabel = styled.span`
           display: block;
           height: 22px;
           margin: 5px auto 4px;
-          border-radius: unset;
-          background: linear-gradient(
-            90deg,
-            #eeedef 30%,
-            #fdfdfd 38%,
-            #fdfdfd 40%,
-            #eeedef 48%
-          );
-          background-size: 200% 100%;
-          background-position: 100% 0;
-
-          animation: skeleton-loading 1s linear infinite;
         `;
       case "productCode":
         return css`
@@ -127,17 +115,6 @@ export const StyledLabel = styled.span`
           margin-bottom: 10px;
           width: 60%;
           height: 22px;
-          background: linear-gradient(
-            90deg,
-            #eeedef 30%,
-            #fdfdfd 38%,
-            #fdfdfd 40%,
-            #eeedef 48%
-          );
-          background-size: 200% 100%;
-          background-position: 100% 0;
-
-          animation: skeleton-loading 1s linear infinite;
         `;
       default:
         return css`
@@ -146,9 +123,4 @@ export const StyledLabel = styled.span`
         `;
     }
   }};
-  @keyframes skeleton-loading {
-    100% {
-      background-position: -100% 0;
-    }
-  }
 `;

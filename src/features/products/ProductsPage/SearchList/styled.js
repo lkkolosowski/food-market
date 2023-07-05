@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { ReactComponent as CrossIcon } from "../../../../images/cross.svg";
 import { ReactComponent as PackagingIcon } from "../../../../images/packaging.svg";
@@ -35,6 +35,7 @@ export const StyledSearchList = styled.ul`
 `;
 
 export const Item = styled.li`
+  position: relative;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
@@ -43,8 +44,41 @@ export const Item = styled.li`
   padding: 10px 0;
   grid-gap: 10px;
 
-  &:hover {
-    box-shadow: 0 2px 6px rgba(186, 199, 213, 0.5);
+  ${({ skeletonLoading }) =>
+    skeletonLoading &&
+    css`
+      &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: transparent;
+        background: linear-gradient(
+          90deg,
+          transparent 30%,
+          #fff 38%,
+          #fff 40%,
+          transparent 48%
+        );
+        background-size: 200% 100%;
+        background-position: 100% 0;
+
+        animation: skeleton-loading 1s linear infinite;
+      }
+    `}
+
+  ${({ skeletonLoading }) =>
+    !skeletonLoading &&
+    css`
+      &:hover {
+        box-shadow: 0 2px 6px rgba(186, 199, 213, 0.5);
+      }
+    `}
+
+  @keyframes skeleton-loading {
+    100% {
+      background-position: -100% 0;
+    }
   }
 `;
 
