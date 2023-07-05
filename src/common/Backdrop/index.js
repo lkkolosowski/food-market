@@ -3,7 +3,7 @@ import StyledBackdrop from "./styled";
 import {
   selectIsFocused,
   setIsFocused,
-} from "../../features/products/ProductsPage/ProductList/productListSlice";
+} from "../../features/products/ProductsPage/SearchList/searchListSlice";
 
 const Backdrop = () => {
   const dispatch = useDispatch();

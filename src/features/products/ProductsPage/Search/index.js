@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { FormField } from "./styled";
 import Input from "../Input";
-import { setIsFocused } from "../ProductList/productListSlice";
 import {
   setSearchValue,
   selectSearchValue,
+  setIsFocused
 } from "../SearchList/searchListSlice";
 import { useState } from "react";
 

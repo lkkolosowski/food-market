@@ -6,7 +6,6 @@ const productListSlice = createSlice({
   initialState: {
     products: getProductsFromLocalStorage(),
     product: "737628064502",
-    isFocused: false,
   },
   reducers: {
     removeProduct: ({ products }, { payload: productId }) => {
@@ -31,9 +30,6 @@ const productListSlice = createSlice({
     },
     cleanFridge: ({ products }) => {
       products.find((product) => product.status !== 0);
-    },
-    setIsFocused: (state, { payload: boolean }) => {
-      state.isFocused = boolean;
     },
     fetchProduct: (state, { payload: productEan }) => {
       state.loading = true;
@@ -61,7 +57,6 @@ const productListSlice = createSlice({
 export const {
   decreaseQuantity,
   increaseQuantity,
-  setIsFocused,
   removeProduct,
   cleanFridge,
   fetchProduct,
@@ -72,7 +67,6 @@ export const {
 const selectProductsState = (state) => state.products;
 
 export const selectProduct = (state) => selectProductsState(state).product;
-export const selectIsFocused = (state) => selectProductsState(state).isFocused;
 
 export const selectProducts = (state) => selectProductsState(state).products;
 export const selectLoading = (state) => selectProductsState(state).loading;
