@@ -77,6 +77,10 @@ export const StyledLabel = styled.span`
           display: block;
           margin-left: 8px;
           margin-right: 8px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
         `;
       case "skeletonProductName":
         return css`
