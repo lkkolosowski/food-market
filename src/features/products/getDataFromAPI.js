@@ -7,24 +7,21 @@ export const getProduct = async (productEan) => {
   );
 
   const product = await response.data;
-
-  if (product.status === 0) {
-    alert("Nie ma takiego produktu w bazie danych.");
-    return;
-  }
-
-  if (product.status === 1) {
-    product.id = nanoid();
-    product.quantity = 1;
-    return product;
-  }
-
-  new Error(response.statusText);
+  product.id = nanoid();
+  product.quantity = 1;
+  return product;
 };
 
 export const searchProducts = async (query) => {
+  const params = {
+    search_simple: "1",
+    action: "process",
+    json: "1",
+    search_terms: query,
+  };
   const response = await axios.get(
-    `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${query}&search_simple=1&action=process&json=1`
+    "https://world.openfoodfacts.org/cgi/search.pl?",
+    { params }
   );
 
   return await response.data;
