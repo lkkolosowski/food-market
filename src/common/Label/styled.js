@@ -5,7 +5,7 @@ export const StyledLabel = styled.span`
   font-size: 0.75rem;
   border-radius: 12px;
   margin-left: 4px;
-  padding: 2px 7px;
+  padding: 0 7px;
   border: 0;
 
   ${({ hidden }) =>
