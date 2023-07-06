@@ -215,7 +215,7 @@ export const CellInner = styled.div`
 `;
 
 export const Image = styled(LazyLoadImage)`
-  width: 100%;
+  width: 100px;
   aspect-ratio: 1;
   display: block;
   object-fit: contain;
