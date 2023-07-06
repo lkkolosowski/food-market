@@ -8,7 +8,7 @@ export const StyledFooter = styled.footer`
 `;
 
 export const Paragraph = styled.p`
-  margin: 0;
+  margin: 0 0 10px;
   padding: 10px 20px;
 `;
 
