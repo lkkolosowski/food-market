@@ -87,7 +87,7 @@ export const StyledLabel = styled.span`
           background-color: #eeedef;
           display: block;
           height: 22px;
-          margin: 5px auto 4px;
+          margin: 5px auto 0;
         `;
       case "productCode":
         return css`

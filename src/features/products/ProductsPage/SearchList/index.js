@@ -41,7 +41,7 @@ const SearchList = () => {
         <Scroll>
           {isLoading === true ? (
             <StyledSearchList>
-              {Array.from({ length: 24 }, (_, index) => (
+              {Array.from({ length: 20 }, (_, index) => (
                 <Item skeletonLoading={isLoading} key={index}>
                   <div>
                     <Packaging />

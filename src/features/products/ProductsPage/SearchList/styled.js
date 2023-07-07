@@ -21,7 +21,7 @@ export const Wrapper = styled.article`
 `;
 
 export const Scroll = styled.div`
-  overflow-y: auto;
+  overflow-y: scroll;
   height: 467px;
 `;
 
