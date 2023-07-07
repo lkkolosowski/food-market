@@ -3,6 +3,7 @@ import Footer from "../../../common/Footer";
 import Header from "../../../common/Header";
 import Section from "../../../common/Section";
 import image from "../../../images/image.jpg";
+import imagePlaceholder from "../../../images/image-150.jpg";
 import { ImageWrapper, Image, Paragraph } from "./styled";
 
 function AuthorPage() {
@@ -14,8 +15,15 @@ function AuthorPage() {
           title="Łukasz Kołosowski"
           body={
             <>
-              <ImageWrapper>
-                <Image avatar src={image} alt="Łukasz" />
+              <ImageWrapper profilePicture>
+                <Image
+                  src={image}
+                  alt="Łukasz"
+                  // height={300}
+                  // width={300}
+                  effect="blur"
+                  placeholderSrc={imagePlaceholder}
+                />
               </ImageWrapper>
               <Paragraph>Hi! 👋🏼 My name is Łukasz, I'm from Wrocław.</Paragraph>
               <Paragraph>
