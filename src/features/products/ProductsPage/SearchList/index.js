@@ -69,7 +69,7 @@ const SearchList = () => {
               {productsBySearch
                 .filter((item) => item.image_front_small_url)
                 .map((product) => (
-                  <Item key={product.id}>
+                  <Item key={product.code}>
                     <div>
                       <Image
                         src={product.image_front_small_url}
@@ -90,7 +90,7 @@ const SearchList = () => {
                       variant="button"
                       as="a"
                       disabled={product.quantity >= 10}
-                      onClick={() => dispatch(fetchProduct(product.id))}
+                      onClick={() => dispatch(fetchProduct(product.code ?? product.id))}
                       content="Add to list +"
                     />
                   </Item>

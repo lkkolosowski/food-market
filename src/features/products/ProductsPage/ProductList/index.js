@@ -51,7 +51,7 @@ const ProductList = () => {
               {products.map(
                 (product) =>
                   product.status === 1 && (
-                    <Product key={product.id}>
+                    <Product key={product.code}>
                       <Cell withImage>
                         {product.product.image_front_url && (
                           <div>
