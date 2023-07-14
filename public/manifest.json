@@ -3,12 +3,12 @@
   "name": "Food Market write in React.js",
   "icons": [
     {
-      "src": "logo128.png",
+      "src": "icon128.png",
       "type": "image/png",
       "sizes": "128x128"
     },
     {
-      "src": "logo512.png",
+      "src": "icon512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
