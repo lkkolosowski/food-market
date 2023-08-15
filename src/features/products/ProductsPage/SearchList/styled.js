@@ -61,10 +61,10 @@ export const Item = styled.li`
         background-color: transparent;
         background: linear-gradient(
           90deg,
-          transparent 30%,
-          #fff 38%,
-          #fff 40%,
-          transparent 48%
+          transparent 23%,
+          #ffffffac 38%,
+          #ffffffac 40%,
+          transparent 55%
         );
         background-size: 200% 100%;
         background-position: 100% 0;
