@@ -53,21 +53,16 @@ const ProductList = () => {
                   product.status === 1 && (
                     <Product key={product.code}>
                       <Cell withImage>
-                        {product.product.image_front_url && (
-                          <div>
-                            {product.product.image_front_url ? (
-                              <Image
-                                src={product.product.image_front_small_url}
-                                alt={
-                                  product.product.product_name ??
-                                  "product image"
-                                }
-                                effect="blur"
-                              />
-                            ) : (
-                              <Packaging />
-                            )}
-                          </div>
+                        {product.product.image_front_url ? (
+                          <Image
+                            src={product.product.image_front_small_url}
+                            alt={
+                              product.product.product_name ?? "product image"
+                            }
+                            effect="blur"
+                          />
+                        ) : (
+                          <Packaging />
                         )}
                       </Cell>
                       <Cell productName>
@@ -76,9 +71,13 @@ const ProductList = () => {
                           target="_blank"
                         >
                           {" "}
-                          {product.product.product_name ??
-                            product.product.brands.split(",")[0]}{" "}
-                          {product["product"]["quantity"] ?? ""}
+                          {product.product.brands
+                            ? product.product.quantity &&
+                              product.product.brands.split(",")[0] +
+                                " " +
+                                product.product.quantity +
+                                ""
+                            : product.code}
                         </StyledLink>
                       </Cell>
                       <Cell noMobile barcode>
@@ -109,85 +108,89 @@ const ProductList = () => {
                         </CellInner>
                       </Cell>
                       <Cell noTablet>
-                        <CellInner>
-                          <span>
-                            {product["product"]["nutriments"]["energy-kcal"] ??
-                              "?"}
-                          </span>
-                          {product["product"]["nutriments"]["energy-kcal"] >=
-                          0 ? (
-                            <Label
-                              variant="kcal"
-                              content={
-                                <>
-                                  kcal
-                                  <br />
-                                  /100g
-                                </>
-                              }
-                            />
-                          ) : (
-                            ""
-                          )}
-                        </CellInner>
+                        {product.product.nutriments ? (
+                          <CellInner>
+                            <span>
+                              {product.product.nutriments["energy-kcal"]}
+                            </span>
+                            {product.product.nutriments["energy-kcal"] && (
+                              <Label
+                                variant="kcal"
+                                content={
+                                  <>
+                                    kcal
+                                    <br />
+                                    /100g
+                                  </>
+                                }
+                              />
+                            )}
+                          </CellInner>
+                        ) : (
+                          "?"
+                        )}
                       </Cell>
                       <Cell noTablet>
-                        <CellInner>
-                          <span>{product.product.nutriments.fat ?? "?"}</span>
-                          {product.product.nutriments.fat >= 0 ? (
-                            <Label
-                              variant="g/100g"
-                              content={
-                                <>
-                                  g<br />
-                                  /100g
-                                </>
-                              }
-                            />
-                          ) : (
-                            ""
-                          )}
-                        </CellInner>
+                        {product.product.nutriments ? (
+                          <CellInner>
+                            <span>{product.product.nutriments.fat}</span>
+                            {product.product.nutriments.fat && (
+                              <Label
+                                variant="g/100g"
+                                content={
+                                  <>
+                                    g<br />
+                                    /100g
+                                  </>
+                                }
+                              />
+                            )}
+                          </CellInner>
+                        ) : (
+                          "?"
+                        )}
                       </Cell>
                       <Cell noTablet>
-                        <CellInner>
-                          <span>
-                            {product.product.nutriments.carbohydrates ?? "?"}
-                          </span>
-                          {product.product.nutriments.carbohydrates >= 0 ? (
-                            <Label
-                              variant="g/100g"
-                              content={
-                                <>
-                                  g<br />
-                                  /100g
-                                </>
-                              }
-                            />
-                          ) : (
-                            ""
-                          )}
-                        </CellInner>
+                        {product.product.nutriments ? (
+                          <CellInner>
+                            <span>
+                              {product.product.nutriments.carbohydrates}
+                            </span>
+                            {product.product.nutriments.carbohydrates && (
+                              <Label
+                                variant="g/100g"
+                                content={
+                                  <>
+                                    g<br />
+                                    /100g
+                                  </>
+                                }
+                              />
+                            )}
+                          </CellInner>
+                        ) : (
+                          "?"
+                        )}
                       </Cell>
                       <Cell noTablet>
-                        <CellInner>
-                          <span>
-                            {product.product.nutriments.proteins ?? "?"}
-                          </span>
-                          {product.product.nutriments.proteins >= 0 ? (
-                            <Label
-                              variant="g/100g"
-                              content={
-                                <>
-                                  g<br />
-                                  /100g
-                                </>
-                              }
-                            />
-                          ) : (
-                            ""
-                          )}
-                        </CellInner>
+                        {product.product.nutriments ? (
+                          <CellInner>
+                            <span>{product.product.nutriments.proteins}</span>
+                            {product.product.nutriments.proteins && (
+                              <Label
+                                variant="g/100g"
+                                content={
+                                  <>
+                                    g<br />
+                                    /100g
+                                  </>
+                                }
+                              />
+                            )}
+                          </CellInner>
+                        ) : (
+                          "?"
+                        )}
                       </Cell>
 
                       <Cell remove>
